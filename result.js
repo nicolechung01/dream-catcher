@@ -1,8 +1,10 @@
-const result = sessionStorage.getItem('apiResponse');
-if (result) {
-    const resultElement = document.getElementById('api-result');
-    resultElement.textContent = result;
-} else {
-    // Handle the case where the response is not found in session storage
-    console.error('API response not found in session storage.');
-}
+document.addEventListener('DOMContentLoaded', function () {
+    // Retrieve the stored result from session storage
+    const storedResult = sessionStorage.getItem('apiResult');
+
+    if (storedResult) {
+        // Display the result on the second page
+        const resultElement = document.getElementById('api-result');
+        resultElement.textContent = storedResult;
+    }
+});

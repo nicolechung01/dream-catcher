@@ -40,7 +40,12 @@ async function makeApiRequest() {
             const result = await response.text();
             console.log(result);
 
-            // You can handle the API response here (e.g., display it on the page)
+
+            sessionStorage.setItem('apiResult', result);
+
+            // Navigate to the second page
+            window.location.href = 'result.html';
+
         } else {
             console.error('API request failed with status:', response.status);
         }
