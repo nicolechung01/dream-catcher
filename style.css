@@ -1,5 +1,5 @@
 body {
-    background: #ecddfe;
+    background: radial-gradient(#04214d,#021024);
     width:auto;
     height:100%;
     margin: 0;
@@ -54,7 +54,7 @@ body {
     height: 300px;    
 }
 .container-left {
-
+    font-family: 'Varela Round', sans-serif;
 }
 .container-right {
 
@@ -62,8 +62,8 @@ body {
 .button {
     padding-left: 20px;
     padding-right: 20px;
-    font-family:'DM Mono', monospace;
-    font-size: 50px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 40px;
     color: white;
     background-color: #FFC736;
     border: none;
@@ -74,8 +74,8 @@ body {
 .button2 {
     padding-left: 20px;
     padding-right: 20px;
-    font-family:'DM Mono', monospace;
-    font-size: 40px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 30px;
     color: white;
     background-color: #FFC736;
     border: none;
@@ -90,19 +90,24 @@ body {
     font-size: 30px;
     width: fit-content;
     border: none;
-    font-family:'DM Mono', monospace;
-    color: #FF5500;
+    font-family: 'Varela Round', sans-serif;
+    color: #fff;
+    text-shadow:1px 1px 12px #ffc636;
     background-color: transparent;
 }
 h1 {
-    font-family: 'DM Mono', monospace;
+    font-family: 'Varela Round', sans-serif;
     font-size: 96px;
-    color: #FF5500; /* Make the text transparent */
+    color: #fff; /* Make the text transparent */
+    text-shadow:1px 1px 12px #ffc636;
 }
 h2 {
-    font-family: 'DM Mono', monospace;
-    font-size: 50px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 70px;
     margin-top: 130px;
+    color: #fff;
+    text-shadow:1px 1px 10px #ffc636;
+
 }
 .header-center {
     position: absolute;
@@ -117,7 +122,7 @@ h2 {
     transform: translate(-50%,-50%);
 }
 .cloud {
-    background: rgba(255, 255, 255);
+    background: #f9fdff;
     width: 300px; 
     height: 100px;
     border-radius: 150px;	
@@ -125,7 +130,7 @@ h2 {
 }
 .cloud:after {
     content: '';
-    background: #fff;
+    background: #f9fdff;
     position: absolute;
     width: 100px;
     height: 100px;
@@ -135,7 +140,7 @@ h2 {
 }
 .cloud:before {
     content: '';
-    background: rgba(255, 255, 255);
+    background: #f9fdff;
     position: absolute;
     width: 170px;
     height: 150px;
@@ -146,13 +151,25 @@ h2 {
 .moon {
     position: absolute;
     margin: auto;
-    top: -130px;
-    right: -30px;
+    top: -140px;
+    right: -50px;
     width: 80px;
     height: 80px;
     background-color: transparent;
     border-radius: 50%;
     box-shadow: -25px 10px 0px 0px #FFC736;
+    animation: moonPath 15s infinite;
+}
+.sun {
+    position: absolute;
+    margin: auto;
+    top: -130px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #FFC736;
+    animation: sunPath 15s infinite;
 }
 .user-input {
     width: 900px;
@@ -161,8 +178,46 @@ h2 {
     border-radius: 15px;
     padding: 10px;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 #api-result {
     font-size: 25px;
 }
+@keyframes moonPath {
+    0% {
+        transform: translateX(-100px) translateY(95px);
+    }
+    25% {
+        transform: translateX(0) translateY(0);
+
+    }
+    50% {
+        transform: translateX(-100px) translateY(95px);
+    }
+    75% {
+        transform: translateX(-100px) translateY(95px);
+    }
+    100% {
+        transform: translateX(-100px) translateY(95px);
+
+    }
+}
+@keyframes sunPath {
+    0% {
+        transform: translateX(-100px) translateY(95px);
+    }
+    25% {
+        transform: translateX(-100px) translateY(95px);
+
+    }
+    50% {
+        transform: translateX(-100px) translateY(95px);
+    }
+    75% {
+        transform: translateX(0) translateY(0);
+    }
+    100% {
+        transform: translateX(-100px) translateY(95px);
+    }
+}
+

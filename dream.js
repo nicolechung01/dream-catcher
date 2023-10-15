@@ -49,7 +49,7 @@ async function makeApiRequest() {
             sessionStorage.setItem('apiResult', result);
 
             // Navigate to the second page
-            //window.location.href = 'result.html';
+            window.location.href = 'result.html';
 
         } else {
             console.error('API request failed with status:', response.status);
