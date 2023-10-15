@@ -1,0 +1,168 @@
+body {
+    background: #ecddfe;
+    width:auto;
+    height:100%;
+    margin: 0;
+    padding: 1px 10px 1px 10px;
+    box-sizing: border-box;
+}
+.wrapper {
+    display: flex; /* Create a vertical flex container */
+    flex-direction: column; /* Stack child containers vertically */
+    align-items: center; /* Center child containers horizontally */
+    justify-content: center; /* Center child containers vertically */
+    height: 100vh; /* Ensure the wrapper takes up the full viewport height */
+}
+.wrapper2 {
+    display: flex; /* Create a vertical flex container */
+    flex-direction: row;
+}
+.container1 {
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+}
+.container2 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+   
+}
+.container3 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    padding: 20px;
+    width: 300px;
+    margin: 10px;
+}
+.container4 {
+    height: 200px;
+}
+.container5 {
+    height: 400px;
+}
+.container6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    height: 300px;    
+}
+.container-left {
+
+}
+.container-right {
+
+}
+.button {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family:'DM Mono', monospace;
+    font-size: 50px;
+    color: white;
+    background-color: #FFC736;
+    border: none;
+    border-radius: 40px;
+    margin-top: 150px;
+    white-space: nowrap;
+}
+.button2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family:'DM Mono', monospace;
+    font-size: 40px;
+    color: white;
+    background-color: #FFC736;
+    border: none;
+    border-radius: 40px;
+    margin-top: 10px;
+    white-space: nowrap;
+}
+.button3 {
+    margin-top: 130px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    width: fit-content;
+    border: none;
+    font-family:'DM Mono', monospace;
+    color: #FF5500;
+    background-color: transparent;
+}
+h1 {
+    font-family: 'DM Mono', monospace;
+    font-size: 96px;
+    color: #FF5500; /* Make the text transparent */
+}
+h2 {
+    font-family: 'DM Mono', monospace;
+    font-size: 50px;
+    margin-top: 130px;
+}
+.header-center {
+    position: absolute;
+    top:40%;
+    left:35%;
+    transform: translate(-50%,-50%);
+}
+.center {
+    position: absolute;
+    top:45%;
+    left:70%;
+    transform: translate(-50%,-50%);
+}
+.cloud {
+    background: rgba(255, 255, 255);
+    width: 300px; 
+    height: 100px;
+    border-radius: 150px;	
+    box-shadow: 5px 10px rgba(149, 170, 205, 0.2);
+}
+.cloud:after {
+    content: '';
+    background: #fff;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    right: 50px;
+}
+.cloud:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    left: 40px;
+}
+.moon {
+    position: absolute;
+    margin: auto;
+    top: -130px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: -25px 10px 0px 0px #FFC736;
+}
+.user-input {
+    width: 900px;
+    height: 300px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+#api-result {
+    font-size: 25px;
+}
