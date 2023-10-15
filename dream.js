@@ -41,7 +41,7 @@ async function makeApiRequest() {
             const jsonResponse = await response.json(); // Parse the JSON response
 
             // Access the specific key you want (e.g., 'keyName')
-            const result = jsonResponse.content;
+            const result = jsonResponse.answer.content;
 
             console.log(result);
 
