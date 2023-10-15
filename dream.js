@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
     // Select the button element
     const apiButton = document.getElementById('interpret');
@@ -7,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 async function makeApiRequest() {
+
+    // Get the content from the textarea
+    const inputElement = document.getElementById('user-input');
+    const input = inputElement.value;
+
     // Define the URL and request options
     const url = 'https://chatgpt-api6.p.rapidapi.com/standard-gpt';
     const options = {
@@ -20,7 +27,7 @@ async function makeApiRequest() {
             conversation: [
                 {
                     role: 'user',
-                    content: 'Hello ChatGPT'
+                    content: input
                 }
             ]
         })
