@@ -1,42 +1,43 @@
-var text;
-function getText() {
-    text = document.getElementById("user-input").value;
-}
 document.addEventListener('DOMContentLoaded', function () {
-    // Select the button and response container
-    const sendButton = document.getElementById('interpret');
-    const responseContainer = document.getElementById('api-result');
-    getText();
+    // Select the button element
+    const apiButton = document.getElementById('interpret');
+
     // Add a click event listener to the button
-    sendButton.addEventListener('click', function () {
-        const data = JSON.stringify({
+    apiButton.addEventListener('click', makeApiRequest);
+});
+
+async function makeApiRequest() {
+    // Define the URL and request options
+    const url = 'https://chatgpt-api6.p.rapidapi.com/standard-gpt';
+    const options = {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'X-RapidAPI-Key': '1aeb0132f1msh318716079ec4ee2p160069jsn91ef9808b8c5',
+            'X-RapidAPI-Host': 'chatgpt-api6.p.rapidapi.com'
+        },
+        body: JSON.stringify({
             conversation: [
                 {
                     role: 'user',
-                    content: text
+                    content: 'Hello ChatGPT'
                 }
             ]
-        });
+        })
+    };
 
-        const xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
+    try {
+        const response = await fetch(url, options);
 
-        xhr.addEventListener('readystatechange', function () {
-            if (xhr.readyState === xhr.DONE) {
-                if (xhr.status === 200) {
-                    const responseText = xhr.responseText;
-                    sessionStorage.setItem('apiResponse', responseText);
-                } else {
-                    console.error('Request failed with status:', xhr.status);
-                }
-            }
-        });
+        if (response.ok) {
+            const result = await response.text();
+            console.log(result);
 
-        xhr.open('POST', 'https://chatgpt-api6.p.rapidapi.com/standard-gpt');
-        xhr.setRequestHeader('content-type', 'application/json');
-        xhr.setRequestHeader('X-RapidAPI-Key', '1aeb0132f1msh318716079ec4ee2p160069jsn91ef9808b8c5');
-        xhr.setRequestHeader('X-RapidAPI-Host', 'chatgpt-api6.p.rapidapi.com');
-
-        xhr.send(data);
-    });
-});
+            // You can handle the API response here (e.g., display it on the page)
+        } else {
+            console.error('API request failed with status:', response.status);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
